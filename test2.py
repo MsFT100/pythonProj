@@ -64,8 +64,8 @@ def process_location_data(data, db):
     db.commit()
 
 def main():
-    server_ip = '13.51.79.100' # Should match the location of your MySQL server.
-    server_port = 33062      # Database listening port
+    server_ip = '13.51.79.100' 
+    server_port = 22    
 
     db = mysql.connector.connect(
         host="demo-db.cmdsvmbxwqo9.eu-north-1.rds.amazonaws.com",
