@@ -65,7 +65,7 @@ def process_location_data(data, db):
 
 def main():
     server_ip = '13.51.79.100' 
-    server_port = 22    
+    server_port = 33062   
 
     db = mysql.connector.connect(
         host="demo-db.cmdsvmbxwqo9.eu-north-1.rds.amazonaws.com",
