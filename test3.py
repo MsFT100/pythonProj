@@ -1,6 +1,6 @@
 import socket
 
-HOST = '16.170.84.123'  # The IP address of the server
+HOST = '13.51.79.100'  # The IP address of the server
 PORT = 8000  # The port number of the server
 
 # Create a socket using IPv4 and TCP protocol
