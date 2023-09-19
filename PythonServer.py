@@ -8,14 +8,6 @@ PORT = 8000  # The port number of the server
 
 exit_flag = threading.Event()  # Event for indicating when to exit
 
-def exit_code():
-    if not exit_flag.is_set():
-        print("Exiting...")
-        exit_flag.set()
-        sys.exit()
-
-# Start the exit hotkey thread
-keyboard.add_hotkey('ctrl+x', exit_code)
 
 # Create a socket using IPv4 and TCP protocol
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
@@ -47,7 +39,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     except Exception as e:
         print(f"An error occurred: {e}")
 
-# Remove the hotkey before exiting
-keyboard.remove_hotkey('ctrl+x')
+
 
 print("Server has closed.")
