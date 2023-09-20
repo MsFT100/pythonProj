@@ -33,7 +33,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 
                 # Split the GPS data packet
                 data_parts = re.split(',|\|', decoded_data)
-
+            # Check the number of data parts
+            if len(data_parts) > 15:
                 # Extracting information from each data parts
                 protocol_header = data_parts[0]
                 gps_signal_status = data_parts[1]
@@ -93,7 +94,9 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                     print("External Car Battery Voltage: Invalid Data")
                 print("Odometer (meters):", odometer_meters)
                 print("RFID:", rfid)
-
+            else:
+                 # Print the protocol header even when the number of data parts is not 18
+                print("Protocol Header Only Received")
 
                 # Send the received data back to the client using ASCII encoding
                 conn.sendall(data)
